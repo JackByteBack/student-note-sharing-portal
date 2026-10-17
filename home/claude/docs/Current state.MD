@@ -29,25 +29,25 @@ Last updated: 2026-10-18 (after the build session)
 - PHP app per [architecture.md](architecture.md); MySQL per [backend-schema.md](backend-schema.md)
 - 12 seeded sample files in `uploads/` so downloads work on first demo
 - Docs consolidated into this folder; report + screenshot + demo docs added
+- 28 screenshots captured by a headless-Chrome driver performing the real
+  flows (register → login → upload → moderate → promote → download)
+- Figures embedded in `report/REPORT.md`; deliverables zipped
+- Stray TS/Neon prototype at the project root removed (owner-approved)
 
 ## Deliberate Technical Debt
 
 - `ponytail:` in-index FULLTEXT misses <3-char tokens; `index.php` falls back to `LIKE` — acceptable at coursework scale.
-- `ponytail:` analytics "average approval time" is AVG of hours (labeled median in UI); exact median needs window functions.
+- `ponytail:` analytics approval-time stat is a plain AVG (coursework scale); exact median would need window functions.
 - View counter increments per request (except author); no per-IP/session dedupe.
 
 ## Open Items
 
 | ID      | Item                                          | Owner |
 | ------- | --------------------------------------------- | ----- |
-| ISS-101 | Screenshots not yet taken (checklist ready)   | Owner |
-| ISS-102 | Report figures need the screenshots pasted in | Owner |
 | ISS-103 | D-P09 name / D-P10 design reference           | Owner |
-| ISS-104 | Stray root prototype (node_modules, neon.ts, src/) predates the PHP pivot — keep or delete | Owner |
+| ISS-105 | Report title page names / course code         | Owner |
 
 ## Next Actions
 
-1. Owner runs the demo per [deployment.md](deployment.md).
-2. Owner takes screenshots per [screenshots.md](screenshots.md).
-3. Fill report figures in [report-outline.md](report-outline.md) + `report/REPORT.md`.
-4. Zip `student-note-portal/` for submission.
+1. Fill the report title page and zip: `Student_Note_Sharing_Portal_Submission.zip` is already built.
+2. Run the viva demo per [demo-script.md](demo-script.md).

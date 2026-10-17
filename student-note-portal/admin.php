@@ -110,7 +110,7 @@ $weekRows = query(
 // yw is YYYYWW — turn it into a readable week label here.
 foreach ($weekRows as &$w) {
     $yw = (string) $w['yw'];
-    $w['label'] = 'W' . ltrim(substr($yw, -2), '0') . ' ' . substr($yw, 2, 2);
+    $w['label'] = 'W' . substr($yw, -2);
 }
 unset($w);
 $publishedMax = 0;
@@ -146,7 +146,7 @@ require __DIR__ . '/includes/header.php';
     <div class="stat"><b><?= (int) ($statusCounts['pending'] ?? 0) ?></b><span class="meta">in queue</span></div>
     <div class="stat"><b><?= number_format($totalDownloads) ?></b><span class="meta">downloads</span></div>
     <div class="stat"><b><?= number_format($totalViews) ?></b><span class="meta">views</span></div>
-    <div class="stat"><b><?= $avgHours === null ? '—' : $avgHours . ' h' ?></b><span class="meta">median approval time</span></div>
+    <div class="stat"><b><?= $avgHours === null ? '—' : $avgHours . ' h' ?></b><span class="meta">avg approval time</span></div>
   </div>
 
   <h2 style="font-size:1.15rem; margin-bottom:0">Notes published — last 8 weeks</h2>

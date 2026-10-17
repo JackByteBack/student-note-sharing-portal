@@ -50,6 +50,7 @@ Postgres draft are archived in the same folder.
 
 - [x] Complete PHP source — `student-note-portal/` (20 files, zero dependencies)
 - [x] MySQL database SQL file — `student-note-portal/note_portal.sql`
-- [x] Project report — `report/REPORT.md` (paste screenshots, fill title page)
-- [ ] Project screenshots — shoot per `home/claude/docs/screenshots.md` (24 shots)
+- [x] Project report — `report/REPORT.md` (figures embedded; title page left to you)
+- [x] Project screenshots — 28 shots in `screenshots/` (real UI runs, incl. post-action flashes)
 - [x] Working demonstration — viva walkthrough in `home/claude/docs/demo-script.md`
+- [x] Packaged — `Student_Note_Sharing_Portal_Submission.zip` (app + report + screenshots)
