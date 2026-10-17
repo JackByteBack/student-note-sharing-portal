@@ -1,0 +1,3 @@
+# Uploads are never served directly — all access goes through download.php
+# which checks login, status and role first (T-08).
+Require all denied
