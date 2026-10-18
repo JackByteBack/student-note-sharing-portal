@@ -123,5 +123,42 @@ textarea { min-height: 90px; }
 .stat .meta { font-size: .78rem; }
 
 .foot { text-align: center; color: var(--muted-text); font-size: .85rem; padding: 1.5rem 0 2.5rem; }
+.foot p { margin: .25rem 0; }
 .muted { color: var(--muted-text); }
 .stack > * + * { margin-top: .8rem; }
+
+/* Long-form content pages (about / privacy / terms / contact) */
+.prose h1 { margin: .2rem 0 .8rem; font-size: 1.5rem; }
+.prose h2 { margin: 1.6rem 0 .4rem; font-size: 1.12rem; }
+.prose p, .prose li { max-width: 72ch; color: var(--ink); }
+.prose ul { padding-left: 1.2rem; }
+.prose .meta { max-width: none; }
+
+/* FAQ (details/summary — no JS) */
+.faq h2 { margin: 0 0 .6rem; font-size: 1.15rem; }
+.faq details { border-top: 1px solid var(--line); padding: .55rem 0; }
+.faq details:first-of-type { border-top: 0; }
+.faq summary { font-weight: 600; cursor: pointer; }
+.faq p { margin: .4rem 0 0; color: var(--muted-text); font-size: .95rem; max-width: 72ch; }
+
+/* Mobile — the tables below are the only fixed-width offenders */
+@media (max-width: 760px) {
+  .table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+@media (max-width: 640px) {
+  .topbar { flex-wrap: wrap; gap: .5rem; padding: .5rem .8rem; }
+  .topbar nav { order: 3; flex-basis: 100%; gap: .8rem; overflow-x: auto; white-space: nowrap; padding-bottom: .2rem; }
+  .who { font-size: .78rem; }
+  .wrap { margin-top: 1rem; padding: 0 .8rem; }
+  .filters { gap: .5rem; }
+  .filters input, .filters select { width: 100%; min-width: 0; }
+  .filters .btn { width: 100%; }
+  input[type=text], input[type=email], input[type=password], select, textarea { max-width: 100%; }
+  .submit-row { flex-wrap: wrap; }
+  .submit-row .btn { flex: 1 1 auto; }
+  .grid { grid-template-columns: 1fr; }
+  .stat { min-width: 74px; }
+  .prose h1 { font-size: 1.3rem; }
+  .bars { height: 110px; }
+  .bars .bar { flex: 0 0 26px; }
+}
