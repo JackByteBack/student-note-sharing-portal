@@ -1,0 +1,3 @@
+# Apache/XAMPP — README deploys the app at /htdocs/student-note-portal/.
+ErrorDocument 404 /student-note-portal/404.php
+ErrorDocument 500 /student-note-portal/500.php

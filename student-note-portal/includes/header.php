@@ -16,6 +16,24 @@ $flashes = take_flashes();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?= e($title ?? APP_NAME) ?> — <?= APP_NAME ?></title>
+<?php
+/* SEO: pages may override via $meta_description / $canonical / $json_ld. */
+$scheme    = (($_SERVER['HTTPS'] ?? '') === 'on') ? 'https' : 'http';
+$host      = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$canonical = $canonical ?? ($scheme . '://' . $host . ($_SERVER['REQUEST_URI'] ?? '/'));
+$desc      = $meta_description ?? 'A free, moderated study-notes library: students share lecture notes as PDF or images, every upload is human-reviewed, and anyone can browse by course and subject.';
+?>
+<meta name="description" content="<?= e($desc) ?>">
+<link rel="canonical" href="<?= e($canonical) ?>">
+<meta property="og:site_name" content="<?= e(APP_NAME) ?>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?= e(($title ?? APP_NAME) . ' — ' . APP_NAME) ?>">
+<meta property="og:description" content="<?= e($desc) ?>">
+<meta property="og:url" content="<?= e($canonical) ?>">
+<meta name="twitter:card" content="summary">
+<?php if (! empty($json_ld)): ?>
+<script type="application/ld+json"><?= $json_ld ?></script>
+<?php endif; ?>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>

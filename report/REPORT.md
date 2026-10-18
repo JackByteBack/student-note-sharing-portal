@@ -211,6 +211,20 @@ UI hiding is never the security boundary.*
 Additional evidence shots: `05b-login-flash.png`, `06b-registered-flash.png`,
 `17b-role-updated.png` — post-action state with flash messages.
 
+SEO / responsive / legal pass (second capture run):
+
+![Figure 26 — About us with long-form tool description](../screenshots/26-about-page.png)
+![Figure 27 — FAQ section and footer links](../screenshots/27-faq-section.png)
+![Figure 28 — Privacy policy](../screenshots/28-privacy-policy.png)
+![Figure 29 — Terms and conditions](../screenshots/29-terms-conditions.png)
+![Figure 30 — Contact us](../screenshots/30-contact-us.png)
+![Figure 31 — custom 404 page](../screenshots/31-404-page.png)
+![Figure 32 — mobile-width browse (responsive layout)](../screenshots/32-mobile-browse.png)
+*Every page ships meta description, canonical and Open Graph tags; the homepage
+carries FAQPage JSON-LD structured data, and `robots.txt` + `sitemap.xml` are
+included. The 404 renders without touching the session or DB, so it survives a
+database outage.*
+
 ## 13. Installation guide
 
 Copy `student-note-portal/` into XAMPP's `htdocs/`; start Apache + MySQL; import

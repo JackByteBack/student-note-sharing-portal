@@ -12,6 +12,12 @@ real app flows (2026-10-18). Adjustments made while shooting:
 - Extra evidence shots kept: `05b-login-flash.png`, `06b-registered-flash.png`,
   `17b-role-updated.png`, `25-report-sent.png`.
 
+**Update 2 (2026-10-18):** SEO/legal/responsive pass landed, so 01 was re-shot
+and 26–32 added (About, FAQ + footer links, Privacy, Terms, Contact, 404, mobile
+browse). Mobile shot uses a 500 px viewport — Chrome headless floors the window
+at 500 px; a true-390 px layout check (iframe probe) reported `scrollW=390, no
+overflow`, so the CSS is clean at phone width, the capture just can't go narrower.
+
 Original checklist retained below for reference.
 
 | # | File name (shot)                | Page + action                                                  | Visible content                                        |
@@ -41,3 +47,10 @@ Original checklist retained below for reference.
 | 23 | 23-transparency-view.png ✓     | transparency table clip                                          | redacted columns only                                   |
 | 24 | 24-er-diagram.png ✓            | render of the schema                                             | entities, FKs, view, trigger box                        |
 | 25 | 25-report-sent.png ✓           | note.php?id=6 after report                                       | flash + report status                                   |
+| 26 | 26-about-page.png ✓            | about.php                                                        | long-form "about the tool" SEO content                 |
+| 27 | 27-faq-section.png ✓           | index.php#faq                                                    | FAQ accordion + new footer links                       |
+| 28 | 28-privacy-policy.png ✓        | privacy.php                                                      | what we collect / never do, rights                     |
+| 29 | 29-terms-conditions.png ✓      | terms.php                                                        | acceptable use, upload rules, moderation               |
+| 30 | 30-contact-us.png ✓            | contact.php                                                      | email routes + offline contact                         |
+| 31 | 31-404-page.png ✓              | /no-such-page (router → 404.php)                                 | custom 404 with recovery links                         |
+| 32 | 32-mobile-browse.png ✓         | index.php at 500 px viewport                                     | wrapped nav, stacked filters, single-column cards      |

@@ -37,7 +37,7 @@ home/claude/docs/       full project documentation set (index: Readme.MD)
 | student@westfield.edu    | student123     | student   | index.php  |
 
 Dev without XAMPP: `mysql.server start && mysql -u root < student-note-portal/note_portal.sql`
-then `php -S 127.0.0.1:8080 -t student-note-portal`.
+then `php -S 127.0.0.1:8080 -t student-note-portal student-note-portal/router.php` (router adds the custom 404).
 
 ## Documentation index
 
@@ -48,9 +48,9 @@ Postgres draft are archived in the same folder.
 
 ## Submission checklist
 
-- [x] Complete PHP source — `student-note-portal/` (20 files, zero dependencies)
+- [x] Complete PHP source — `student-note-portal/` (30 files, zero dependencies; incl. SEO meta + JSON-LD, About/Privacy/Terms/Contact, FAQ, 404/500, robots.txt, sitemap.xml)
 - [x] MySQL database SQL file — `student-note-portal/note_portal.sql`
 - [x] Project report — `report/REPORT.md` (figures embedded; title page left to you)
-- [x] Project screenshots — 28 shots in `screenshots/` (real UI runs, incl. post-action flashes)
+- [x] Project screenshots — 35 shots in `screenshots/` (real UI runs, incl. post-action flashes, SEO/legal pages, mobile view)
 - [x] Working demonstration — viva walkthrough in `home/claude/docs/demo-script.md`
 - [x] Packaged — `Student_Note_Sharing_Portal_Submission.zip` (app + report + screenshots)

@@ -17,6 +17,18 @@ function e(mixed $value): string
     return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
 }
 
+/** Base URL of the install (scheme://host/folder) derived from the request —
+ *  works on localhost, XAMPP htdocs and any real domain without config. */
+function site_url(string $path = ''): string
+{
+    $https = ($_SERVER['HTTPS'] ?? '') === 'on';
+    $dir   = str_replace('\\', '/', dirname((string) ($_SERVER['SCRIPT_NAME'] ?? '/')));
+    $dir   = in_array($dir, ['/', '.', ''], true) ? '' : $dir;
+    return ($https ? 'https' : 'http') . '://'
+         . ($_SERVER['HTTP_HOST'] ?? 'localhost') . $dir . '/'
+         . ltrim($path, '/');
+}
+
 /** Current base URL path for links in emails/views (unused in v1). */
 
 /* ---------- CSRF ---------- */

@@ -104,15 +104,53 @@ $qs = static function (array $base): string
 };
 
 $title = 'Browse notes';
+$meta_description = 'Browse free study notes shared by students — search lecture notes, summaries and revision guides by course, subject and tag. Every note is moderated before publication.';
+
+/* FAQ content: rendered as details/summary and as FAQPage structured data. */
+$faq = [
+    ['What is the Student Note Sharing Portal?',
+     'A free, moderated library where students share study notes. Anyone can browse and read the catalogue; uploaded files are checked by a student moderator before they appear publicly.'],
+    ['Do I need an account?',
+     'No — searching, filtering and opening note pages works without one. You need a free account to download files, upload your own notes or save favourites.'],
+    ['What files can I upload?',
+     'PDF, JPG or PNG, up to 10 MB. The server checks the real file type of every upload, so renamings do not get through. Add a title, description and up to eight tags so people can find it.'],
+    ['How does moderation work?',
+     'Every upload enters a review queue. A moderator approves it (publishing it), rejects it with a reason such as low quality, or removes it later for a policy violation. All actions appear in the public transparency log.'],
+    ['How do I report a bad note?',
+     'Open the note and use the report button — pick a reason like copyright, low quality or privacy, add details, and it goes straight to the moderation queue. You cannot report your own notes.'],
+    ['Is it really free?',
+     'Yes. There are no ads, no paid tier and no data selling. The portal is a student-run project that runs on plain PHP and MySQL.'],
+    ['My note was rejected or removed — what now?',
+     'Check the transparency log for the reason category, fix the issue, and upload a corrected version. You can also appeal by email via the contact page.'],
+];
+$json_ld = json_encode([
+    '@context'        => 'https://schema.org',
+    '@type'           => 'FAQPage',
+    'mainEntity'      => array_map(static fn (array $qa): array => [
+        '@type'          => 'Question',
+        'name'           => $qa[0],
+        'acceptedAnswer' => ['@type' => 'Answer', 'text' => $qa[1]],
+    ], $faq),
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
 require __DIR__ . '/includes/header.php';
 ?>
+
+<div class="card prose" style="margin-bottom:1.2rem">
+  <h1 style="margin:.2rem 0 .4rem">Free study notes, shared by students — reviewed by students</h1>
+  <p style="margin:0">
+    Search <?= (int) $total ?> published note<?= $total === 1 ? '' : 's' ?> across courses and subjects:
+    lecture summaries, revision guides and past-paper walkthroughs uploaded by classmates. Every file is
+    human-moderated before it goes public. Read more <a href="about.php">about the portal</a>.
+  </p>
+</div>
 
 <form class="filters" method="get">
   <input type="text" name="q" value="<?= e($q) ?>" placeholder="Search title or description…" aria-label="Search">
   <select name="course" aria-label="Course">
     <option value="">All courses</option>
     <?php foreach ($courses as $c): ?>
-      <option value="<?= (int) $c['id'] ?>" <?= (!$subjectId && (int) $_GET['course'] == $c['id']) ? 'selected' : '' ?>>
+      <option value="<?= (int) $c['id'] ?>" <?= (!$subjectId && (int) ($_GET['course'] ?? 0) == $c['id']) ? 'selected' : '' ?>>
         <?= e($c['name']) ?>
       </option>
     <?php endforeach; ?>
@@ -178,5 +216,15 @@ require __DIR__ . '/includes/header.php';
     </nav>
   <?php endif; ?>
 <?php endif; ?>
+
+<section class="card faq" id="faq" style="margin-top:1.4rem">
+  <h2>Frequently asked questions</h2>
+  <?php foreach ($faq as $qa): ?>
+    <details>
+      <summary><?= e($qa[0]) ?></summary>
+      <p><?= e($qa[1]) ?></p>
+    </details>
+  <?php endforeach; ?>
+</section>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>

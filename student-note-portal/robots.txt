@@ -1,0 +1,18 @@
+# Student Note Sharing Portal — robots.txt
+# Public pages are crawlable; account, moderation and raw-file areas are not.
+# NOTE: swap localhost for the real domain when deployed.
+
+User-agent: *
+Disallow: /includes/
+Disallow: /uploads/
+Disallow: /admin.php
+Disallow: /review.php
+Disallow: /upload.php
+Disallow: /my_notes.php
+Disallow: /bookmarks.php
+Disallow: /login.php
+Disallow: /register.php
+Disallow: /logout.php
+Disallow: /500.php
+
+Sitemap: http://localhost/student-note-portal/sitemap.xml

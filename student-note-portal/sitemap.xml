@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: swap localhost for the real domain when deployed.
+     Static public pages only; note pages are reached by crawling the catalogue links. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>http://localhost/student-note-portal/index.php</loc><lastmod>2026-10-18</lastmod><priority>1.0</priority></url>
+  <url><loc>http://localhost/student-note-portal/about.php</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>http://localhost/student-note-portal/transparency.php</loc><lastmod>2026-10-18</lastmod><priority>0.6</priority></url>
+  <url><loc>http://localhost/student-note-portal/contact.php</loc><lastmod>2026-10-18</lastmod><priority>0.5</priority></url>
+  <url><loc>http://localhost/student-note-portal/privacy.php</loc><lastmod>2026-10-18</lastmod><priority>0.3</priority></url>
+  <url><loc>http://localhost/student-note-portal/terms.php</loc><lastmod>2026-10-18</lastmod><priority>0.3</priority></url>
+</urlset>

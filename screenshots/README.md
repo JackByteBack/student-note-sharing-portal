@@ -1,8 +1,8 @@
 # Screenshots
 
-Empty until you take them. One PNG per row of the checklist in
-`home/claude/docs/screenshots.md` (24 shots: pages × roles, plus 3 phpMyAdmin/ER
-shots for the report).
+35 PNGs, one per row of the checklist in `home/claude/docs/screenshots.md`.
+All shots are real UI runs of the app (headless Chrome against the running
+PHP server), including post-action flash messages, the SEO/legal pages
+(26–31) and a mobile-width view (32).
 
-After shooting, the figures referenced in `report/REPORT.md` fall into place and
-the whole `deliverables/` set is ready to zip.
+The figures referenced in `report/REPORT.md` reference these files by number.

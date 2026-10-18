@@ -1,0 +1,23 @@
+{
+  "name": "student-note-sharing-portal",
+  "version": "1.0.0",
+  "description": "Course submission project — a moderated study-notes portal: students upload (PDF/JPG/PNG with ownership attestation), moderators approve/reject/remove, admins manage users, taxonomy and analytics; the public browses published notes without an account (downloads need login).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1152.0",
+    "@aws-sdk/s3-request-presigner": "^3.1152.0",
+    "dotenv": "^18.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

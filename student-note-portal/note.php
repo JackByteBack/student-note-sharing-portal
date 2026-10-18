@@ -130,6 +130,9 @@ $tags = query(
 $myReport = query('SELECT status FROM reports WHERE note_id = ? AND reporter_id = ?', [$id, ($user['id'] ?? 0)])->fetch();
 
 $title = $note['title'];
+$meta_description = ($note['description'] ?? '') !== ''
+    ? mb_substr(trim((string) $note['description']), 0, 155)
+    : 'Study note "' . $note['title'] . '" — ' . $note['subject'] . ', ' . $note['course'] . ' — free download on ' . APP_NAME . '.';
 require __DIR__ . '/includes/header.php';
 ?>
 
