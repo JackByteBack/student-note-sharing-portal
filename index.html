@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Note Sharing Portal — project hub</title>
+<meta name="description" content="Coursework project: a moderated study-notes portal written in plain PHP + MySQL. Source, report and screenshots.">
+<style>
+  :root { --ink:#111827; --mut:#6b7280; --brand:#4f46e5; --line:#e5e7eb; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:#fafafa; line-height:1.55; }
+  .head { max-width:900px; margin:0 auto; padding:2.2rem 1.2rem 1rem; }
+  .head h1 { font-size:1.9rem; margin:.2rem 0 .6rem; }
+  .badge { display:inline-block; background:#eef2ff; color:var(--brand); font-size:.8rem; font-weight:700; padding:.25rem .65rem; border-radius:99px; }
+  .sub { color:var(--mut); max-width:64ch; }
+  main { max-width:900px; margin:0 auto; padding:0 1.2rem 3rem; }
+  .btns { display:flex; gap:.6rem; flex-wrap:wrap; margin:1.2rem 0; }
+  .btn { text-decoration:none; font-weight:600; padding:.55rem .95rem; border-radius:9px; border:1px solid var(--line); background:#fff; color:var(--ink); }
+  .btn.primary { background:var(--brand); border-color:var(--brand); color:#fff; }
+  .cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; margin:1.6rem 0; }
+  figure { margin:0; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#fff; }
+  figure img { width:100%; display:block; }
+  figcaption { font-size:.85rem; color:var(--mut); padding:.5rem .8rem; }
+  h2 { font-size:1.15rem; margin:2rem 0 .4rem; }
+  ol { margin:.4rem 0; padding-left:1.3rem; }
+  code { background:#f3f4f6; padding:.1rem .35rem; border-radius:5px; font-size:.9em; }
+  .note { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:.8rem 1rem; margin:1.4rem 0; font-size:.95rem; }
+  footer { max-width:900px; margin:0 auto; padding:1rem 1.2rem 2.5rem; color:var(--mut); font-size:.85rem; }
+</style>
+</head>
+<body>
+<div class="head">
+  <span class="badge">Coursework · PHP 8 + MySQL</span>
+  <h1>Student Note Sharing Portal</h1>
+  <p class="sub">A moderated study-notes library: students upload lecture notes (PDF/JPG/PNG, ownership attestation), moderators approve or reject every submission before it goes public, anonymous visitors can browse freely and download once logged in. Includes a public redacted transparency log, download/view counters, bookmarks and an analytics dashboard.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/JackByteBack/student-note-sharing-portal">Source on GitHub</a>
+    <a class="btn" href="report/REPORT.md">Read the report</a>
+    <a class="btn" href="https://github.com/JackByteBack/student-note-sharing-portal/blob/main/home/claude/docs/Deployment%20.MD">Run it locally</a>
+  </div>
+</div>
+<main>
+  <div class="note"><strong>Heads-up:</strong> this page is the project hub, not the live app. The full app needs PHP + MySQL, which static/JavaScript hosts like Vercel don't provide — run it locally with XAMPP (3 steps below) or host the same files on any PHP hosting.</div>
+
+  <h2>What it looks like</h2>
+  <div class="cols">
+    <figure><img src="screenshots/01-browse-anonymous.png" alt="Browse page with search, filters and note cards"><figcaption>Public browse — search, course/subject filters, tag chips</figcaption></figure>
+    <figure><img src="screenshots/16-admin-dashboard.png" alt="Admin dashboard with stats and charts"><figcaption>Admin dashboard — stats, weekly trends, user &amp; taxonomy management</figcaption></figure>
+    <figure><img src="screenshots/15-transparency-public.png" alt="Public transparency log"><figcaption>Redacted transparency log — every moderation action, no private data</figcaption></figure>
+  </div>
+
+  <h2>Run it locally in 3 steps</h2>
+  <ol>
+    <li>Install <a href="https://www.apachefriends.org/">XAMPP</a>, copy the <code>student-note-portal/</code> folder into <code>htdocs/</code>.</li>
+    <li>Import the database: open phpMyAdmin → Import → <code>note_portal.sql</code>.</li>
+    <li>Open <code>http://localhost/student-note-portal/</code> and log in as <code>admin@westfield.edu</code> / <code>admin123</code>.</li>
+  </ol>
+</main>
+<footer>Jack's coursework submission — 33 screenshots taken from the real UI, zero runtime dependencies, plain PHP.</footer>
+</body>
+</html>
